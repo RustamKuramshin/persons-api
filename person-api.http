@@ -1,0 +1,42 @@
+### Получение списка персон
+GET /api/v1/persons
+Host: localhost:8080
+
+### Получение персоны по её первичному ключ id
+GET /api/v1/persons/3
+Host: localhost:8080
+
+### Выборка персон по их свойству (например, по имени и возрасту)
+GET /api/v1/persons?name=Ivan
+Host: localhost:8080
+
+### Создание персоны
+POST /api/v1/persons
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "Ivan",
+  "age": 55
+}
+
+### Полное обновление персоны
+PUT /api/v1/persons/3
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "Fedor",
+  "age": 45
+}
+
+### Частичное обновление ресурса
+PATCH /api/v1/persons/3
+Host: localhost:8080
+Content-Type: application/json
+
+[{ "op": "replace", "path": "/age", "value": 456 }]
+
+### Удаление сущности по id
+DELETE /api/v1/persons/1
+Host: localhost:8080
